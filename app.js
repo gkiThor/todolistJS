@@ -50,6 +50,9 @@ document.addEventListener('DOMContentLoaded', function(){
     // Ajout de la tâche lors de la soumission du formulaire
     form.addEventListener('submit', function(event) {
         
+        event.preventDefault(); // Empêche le rechargement de la page
+        const taskText = taskInput.value.trim();//recupere et traite le texte de la tache
+
         
     });
 
