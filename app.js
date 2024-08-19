@@ -48,6 +48,10 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     // Ajout de la tâche lors de la soumission du formulaire
+    form.addEventListener('submit', function(event) {
+        
+        
+    });
 
     // Filtrage des tâches
 
