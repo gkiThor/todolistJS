@@ -49,11 +49,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
     // Ajout de la tâche lors de la soumission du formulaire
     form.addEventListener('submit', function(event) {
-        
+
         event.preventDefault(); // Empêche le rechargement de la page
         const taskText = taskInput.value.trim();//recupere et traite le texte de la tache
 
-        
+        //verifie si le texte n est pas vide et creer une tache
+        if (taskText !== '') {
+            createTask(taskText);
+            taskInput.value = ''; // Réinitialise le champ de saisie
+        }
     });
 
     // Filtrage des tâches
