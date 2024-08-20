@@ -61,6 +61,16 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 
     // Filtrage des tâches
+    //on parcour les boutons de filtre et on ajoute un evenement
+    filters.forEach(function(filterBtn) {
+        filterBtn.addEventListener('click', function() {
+            const filter = filterBtn.getAttribute('data-filter');  //permet de recuperer le filtre selectionne
+
+            //on gere l etat des boutons de filtre
+            filters.forEach(btn => btn.classList.remove('active'));
+            filterBtn.classList.add('active');
+        });
+    });
 
 })
 
