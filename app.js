@@ -69,6 +69,40 @@ document.addEventListener('DOMContentLoaded', function(){
             //on gere l etat des boutons de filtre
             filters.forEach(btn => btn.classList.remove('active'));
             filterBtn.classList.add('active');
+
+
+            Array.from(taskList.children).forEach(function(task) {
+                //on test le filtre
+                /*Si le filtre selectionne est all alors 
+                        on affiche toutes les taches
+                    sinon si le filtre selectionne est todo alors  on test
+                        si la tache est done alors
+                            on cache la tache
+                        sinon
+                            on affiche la tache
+                sinon si le filtre est done alors on test
+                    si la tache est marquee done
+                        on affiche la tache
+                    sinon 
+                        on cache la tache
+
+                */
+                if (filter === 'all') {
+                    task.style.display = '';
+                } else if (filter === 'todo') {
+                    if (task.classList.contains('done')) {
+                        task.style.display = 'none';
+                    } else {
+                        task.style.display = '';
+                    }
+                } else if (filter === 'done') {
+                    if (task.classList.contains('done')) {
+                        task.style.display = '';
+                    } else {
+                        task.style.display = 'none';
+                    }
+                }
+            });
         });
     });
 
